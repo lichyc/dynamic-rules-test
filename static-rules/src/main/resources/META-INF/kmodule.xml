@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <kbase name="test-rules-a" packages="com.acme.test" equalsBehavior="equality" eventProcessingMode="cloud" default="true">
+        <ksession name="test-rules-a-sf" default="false" type="stateful" clockType="realtime" />
+        <ksession name="test-rules-a-sl" default="true" type="stateless" clockType="realtime" />
+    </kbase>
+    
+    <kbase name="test-rules-b" packages="com.acme.test" equalsBehavior="equality" eventProcessingMode="cloud" default="false">
+        <ksession name="test-rules-b-sf" default="false" type="stateful" clockType="realtime" />
+        <ksession name="test-rules-b-sl" default="false" type="stateless" clockType="realtime" />
+    </kbase>
+     
+</kmodule>

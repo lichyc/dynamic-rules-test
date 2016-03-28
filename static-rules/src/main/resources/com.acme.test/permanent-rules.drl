@@ -1,0 +1,30 @@
+package com.acme.test
+
+//list any import classes here.
+import com.acme.brms.domain.AcmeFactA;
+import java.util.logging.Level;
+
+//declare any global variables here
+global java.util.logging.Logger rulesLogger;
+
+
+rule "Your First Rule"
+
+    when
+        //conditions
+        fact : AcmeFactA (name == null)
+    then
+        //actions
+        rulesLogger.info("Name is unset, will set it.");
+        fact.setName("Unknown");
+end
+
+rule "Your Second Rule"
+    //include attributes such as "salience" here...
+    when
+        //conditions
+        fact : AcmeFactA (name != null)
+    then
+        //actions
+		rulesLogger.info("Hurra, the name is set to" + fact.getName());
+end

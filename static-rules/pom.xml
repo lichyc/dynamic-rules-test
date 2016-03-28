@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.redhat.gss.brms</groupId>
+		<artifactId>dynamic-rules-test-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>dynamic-rules-test-static-rules</artifactId>
+
+	<build>
+		<testResources>
+			<testResource>
+				<directory>/home/clichybi/customer/LODH/lodh-workspace/dynamic-rules-test/static-rules/src/test/resources</directory>
+			</testResource>
+			<testResource>
+				<directory>/home/clichybi/customer/LODH/lodh-workspace/dynamic-rules-test/static-rules/src/main/resources</directory>
+			</testResource>
+		</testResources>
+	</build>
+
+	<dependencies>
+		<!-- Project Dependencies -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>dynamic-rules-test-datamodel</artifactId>
+		</dependency>
+
+		<!-- JBoss BRMS/Drools dependencies. -->
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>knowledge-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-decisiontables</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-templates</artifactId>
+		</dependency>
+
+		<!-- 3rd party libs dependencies. -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+</project>

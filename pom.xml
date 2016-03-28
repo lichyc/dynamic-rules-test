@@ -1,0 +1,156 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.redhat.gss.brms</groupId>
+	<artifactId>dynamic-rules-test-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<version.org.kie>6.3.0.Final-redhat-5</version.org.kie>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Project dependencies. -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>dynamic-rules-test-datamodel</artifactId>
+				<version>${project.version}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>dynamic-rules-test-static-rules</artifactId>
+				<version>${project.version}</version>
+				<scope>compile</scope>
+			</dependency>
+
+
+			<!-- Drools/BRMS dependencies. -->
+			<dependency>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-api</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-ci</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>knowledge-api</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-core</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-compiler</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-decisiontables</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-templates</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+
+			<!-- jBPM 6 / BRMS dependencies. -->
+			<dependency>
+				<groupId>org.jbpm</groupId>
+				<artifactId>jbpm-bpmn2</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jbpm</groupId>
+				<artifactId>jbpm-flow</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jbpm</groupId>
+				<artifactId>jbpm-flow-builder</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>compile</scope>
+			</dependency>
+
+			<!-- 3rd party libs dependencies. -->
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>2.4</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.3.2</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.5</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>1.0.13</version>
+				<scope>compile</scope>
+			</dependency>		
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.0.13</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>compile</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<packaging>pom</packaging>
+	<modules>
+		<module>datamodel</module>
+	    <module>runtime</module>
+		<module>static-rules</module>
+	</modules>
+
+</project>
