@@ -9,7 +9,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<version.org.kie>6.3.0.Final-redhat-5</version.org.kie>
+		<version.org.kie>7.60.0.Final</version.org.kie>
 	</properties>
 
 	<dependencyManagement>
